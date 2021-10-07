@@ -114,7 +114,7 @@ def rss_monitor(context):
                 # check until a new item pops up
                 while (url_list[1] != rss_d.entries[feed_count]['link'] and url_list[2] != rss_d.entries[feed_count]['title']):
                     feed_titles.insert(0, rss_d.entries[feed_count]['title'])
-                    feed_urls.insert(0, rss_d.entries[feed_count]['link'])
+                    feed_urls.insert(0, rss_d.entries[feed_count]['enclosures'])
                     feed_count += 1
                 for x in range(len(feed_urls)):
                     feed_info = f"/mirror {feed_urls[x]}"
