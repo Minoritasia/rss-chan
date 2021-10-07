@@ -47,7 +47,7 @@ def cmd_get(update, context):
                 msg = update.effective_message.reply_text(f"Getting the last <b>{count}</b> item(s), please wait!", parse_mode='HTMl')
                 rss_d = feedparser.parse(feed_url[0])
                 for item_num in range(count):
-                    item_info +=f"<b>{rss_d.entries[item_num]['title']}</b>\n{rss_d.entries[item_num]['href']}\n\n"
+                    item_info +=f"<b>{rss_d.entries[item_num]['title']}</b>\n{rss_d.entries[item_num]['link'['href']]}\n\n"
                 msg.edit_text(item_info, parse_mode='HTMl')
             except (IndexError, BadRequest):
                 msg.edit_text("Parse depth exceeded. Try again with a lower value.")
